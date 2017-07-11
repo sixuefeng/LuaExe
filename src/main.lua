@@ -7,7 +7,9 @@ require "config"
 require "cocos.init"
 
 local function main()
-    require("app.MyApp"):create():run()
+    cc.exports.myApp = require("app.MyApp"):create()
+    myApp:run()
+    -- require("app.MyApp"):create():run()
 end
 
 local status, msg = xpcall(main, __G__TRACKBACK__)

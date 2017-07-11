@@ -32,6 +32,7 @@ function AppBase:ctor(configs)
 end
 
 function AppBase:run(initSceneName)
+    -- dump(initSceneName)
     initSceneName = initSceneName or self.configs_.defaultSceneName
     self:enterScene(initSceneName)
 end
@@ -43,6 +44,7 @@ function AppBase:enterScene(sceneName, transition, time, more)
 end
 
 function AppBase:createView(name)
+    -- dump(name)
     for _, root in ipairs(self.configs_.viewsRoot) do
         local packageName = string.format("%s.%s", root, name)
         local status, view = xpcall(function()

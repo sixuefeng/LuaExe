@@ -70,6 +70,11 @@ local function setDesignResolution(r, framesize)
             width = framesize.width / scaleY
             height = framesize.height / scaleY
             view:setDesignResolutionSize(width, height, cc.ResolutionPolicy.NO_BORDER)
+
+            -- dump(width)
+            -- dump(height)
+            -- dump(framesize)
+            -- dump(scaleY)
         elseif r.autoscale == "EXACT_FIT" then
             view:setDesignResolutionSize(r.width, r.height, cc.ResolutionPolicy.EXACT_FIT)
         elseif r.autoscale == "NO_BORDER" then
